@@ -1,30 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import '../../App.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from '../Header'
 import Landing from '../Landing'
 import Footer from '../Footer'
-import Welcome from '../Welcome';
-import Login from '../Login';
-import Signup from '../Signup';
-import ErrorPage from '../ErrorPage';
+import Welcome from '../Welcome'
+import Login from '../Login'
+import Signup from '../Signup'
+import ErrorPage from '../ErrorPage'
+import ForgetPassword from '../ForgetPassword'
+import '../../App.css';
+import { IconContext } from 'react-icons'
 
-function App (){
-    return(   
-        <Router>
-            <Header />
+function App() {
+  return (
+    <Router>
+      <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
+        <Header />
 
-            <Routes>
-                <Route exact path="/" element={<Landing />} />
-                <Route path="/welcome" element={<Welcome />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="*" element={<ErrorPage />} />
-            </Routes>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/welcome" component={Welcome} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/forgetpassword" component={ForgetPassword} />
+          <Route component={ErrorPage} />
+        </Switch>
 
-            <Footer />
-        </Router>
-    )
+        <Footer />
+      </IconContext.Provider>
+    </Router>
+  );
 }
 
 export default App;

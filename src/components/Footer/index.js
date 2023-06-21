@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const Footer = () => {
     return (
         <footer>
-            <div className="footerContainer">
-                <p>Projet réalisé par Fl0jfk</p>
-                <p>Les icônes Wolverine, Iron-Man Spiderman ainsi que Batman proviennent d'iconfinder.com</p>
+            <div className="footer-container">
+                <p>Projet réalisé par DonkeyGeek - 2020</p>
+                <p>Les icônes Wolverine, Iron-man, Spider-man, Batman sont prises sur iconFinder.com</p>
             </div>
         </footer>
     )
